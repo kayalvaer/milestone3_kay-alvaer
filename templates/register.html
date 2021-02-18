@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block info %}
+   
+    <div class="container">
+        <form class="reg-form my-5" method="POST" action="{{ url_for('register') }}">
+        <div class="container d-flex justify-content-center pt-5" >
+            <h3 class="formTitle text-primary">
+                Register here!
+            </h3>
+        </div>
+        
+        <div class="row justify-content-md-center border-light shadow rounded-lg">
+          <div class="col col-lg-8">
+            <!------username---->
+            <div class="input-group input-group-lg pb-5">
+                <div class="input-group-prepend pr-3">
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" id="username" placeholder="username" name="username" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <!-------email------>
+            <div class="input-group input-group-lg pb-5">
+                <div class="input-group-prepend pr-3">
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="text" id="email" placeholder="email" name="email" class="form-control bg-white" aria-label="Large" aria-describedby="inputGroup-sizing-sm" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com ">
+            </div>
+            <!-----pasword---->
+            <div class="input-group input-group-lg pb-5">
+                <div class="input-group-prepend pr-3">
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input type="text" id="Password" placeholder="Password" name="Password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <!----register button-->
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <button type="button" class="btn btn-raised btn-success center-align btn-lg pl-3"><i class="fas fa-sign-in-alt"></i>Register Now</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    </div>
+
+{% endblock %}

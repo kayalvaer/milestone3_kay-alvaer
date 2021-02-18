@@ -3,22 +3,92 @@ body, html{
     margin: 0;
 }
 
-.text-shadow {
-    color: #bf360c;
+body{
+    background-image: radial-gradient(circle, #ffffff, #e2a584);
 }
 
-.nav {
-    color: #bf360c;
-    border: none;
-}
-.nav.navbar.navbar-expand{
-    color: #ef69ef;
+/* Navigation */
+div#navbarSupportedContent.carousel.slide.carousel-fade {
+    height: 450px;
 }
 
-h5 p{
+nav.container.navstyle.navbar{
+    box-shadow: none;
     color: #bf360c; 
 }
+i, h3, p, .nav-link:hover{
+    color: #bf360c!important;
+}
 
-.Navbar-Brand{
-    padding-left: 3em;
+.nav-item{
+    colour: #252525;
+}
+
+/* register form styling */
+
+img.card-img.w-30px.card-icon{
+    width: 40px;
+    height: 40px;
+}
+i{
+    size: 10em;
+    width: 2rem;
+}
+.reg-form{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    top: 20px;
+    background-color: #fefefe;
+    padding-bottom: 2em;
+}
+
+/* carousel sectoin styling */
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item-active {
+    transition: transform 1.2s ease;
+    height: 450px;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 55%;
+    text-transform: uppercase;
+    transform: translateY(-55%);
+}
+.hero-info{
+    border-radius: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* footer */
+.wrapper{
+    padding-bottom:0;
+    left:0;
+    flex: 1 0 auto;
+} 
+ 
+.footer{
+    background-color: #ffffff;
+    height: 2.75em;
+    flex-shrink: 0; 
+    margin-top: 8rem;
+    padding: 0.5em;
+  
+
+
+    /* &:hover{
+        color: $colour-primary;
+    }  */
+}
+
+.footer a{
+    font-size: 1.5em;
+    letter-spacing: 0.5em;
+    
+}
+#root{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
 }
