@@ -4,14 +4,19 @@ body, html{
 }
 
 .text-shadow {
-    text-shadow: 2px solid rgba(0, 0, 0, 0.5);
+    color: #bf360c;
 }
 
-nav ul a{
+.nav {
     color: #bf360c;
+    border: none;
 }
 .nav.navbar.navbar-expand{
     color: #ef69ef;
+}
+
+h5 p{
+    color: #bf360c; 
 }
 
 .Navbar-Brand{
