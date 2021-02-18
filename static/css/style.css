@@ -1,0 +1,19 @@
+body, html{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.text-shadow {
+    text-shadow: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+nav ul a{
+    color: #bf360c;
+}
+.nav.navbar.navbar-expand{
+    color: #ef69ef;
+}
+
+.Navbar-Brand{
+    padding-left: 3em;
+}
