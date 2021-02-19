@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block info %}
+   
+    <div class="container">
+        <form class="reg-form my-5" method="POST" action="{{ url_for('login') }}">
+        <div class="container d-flex justify-content-center pt-5 m-2" >
+            <h3 class="formTitle text-primary">
+                Sign In
+            </h3>
+        </div>
+        <div className="d-md-none bg-gray py-4 text-dark"></div>
+        
+        <!-----employee modal----->
+        <div id="modal-review" class="container-modal row">
+            <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
+                <div class="modal-emp col col-lg-8 col-md-6 col-sm-6 col-xs-4 m-3">
+                    <!------username---->
+                        <div class="input-group input-group-lg pb-5 rounded-bottom">
+                            <div class="input-group-prepend pr-3">
+                                <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input 
+                                type="text"    
+                                id="input_username" 
+                                placeholder="employeename" 
+                                name="employeename" 
+                                class="form-control rounded-bottom" 
+                                aria-label="Large" 
+                                aria-describedby="inputGroup-sizing-sm"
+                                minlength="5"
+                                maxlength="15" 
+                                pattern="^[a-zA-Z0-9]{5,15}$"
+                                title="Must be a mix of more than five characters" 
+                                required
+                            />
+                        </div>
+                    <!------employee image URL---->
+                        <div class="input-group input-group-lg pb-5 rounded-bottom">
+                            <div class="input-group-prepend pr-3">
+                                <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-upload"></i></span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="img_url">Upload image</label>
+                                <input 
+                                    type="text"    
+                                    id="url_img" 
+                                    placeholder="url_img" 
+                                    name="url_img"
+                                    minlength="5"
+                                    maxlength="100" 
+                                    class="form-control rounded-bottom" 
+                                    aria-label="Large" 
+                                    title="upload your image here" 
+                                    required
+                                />
+                            </div>
+                        </div>
+                            <!------job title---->
+                        <div class="input-group input-group-lg pb-5 rounded-bottom">
+                            <div class="input-group-prepend pr-3">
+                                <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input 
+                                    type="text"    
+                                    id="input_username" 
+                                    placeholder="employeename" 
+                                    name="employeename" 
+                                    class="form-control rounded-bottom" 
+                                    aria-label="Large" 
+                                    aria-describedby="inputGroup-sizing-sm"
+                                    minlength="5"
+                                    maxlength="100" 
+                                    pattern="^[a-zA-Z0-9]{5,15}$"
+                                    title="Enter job title or department" 
+                                    required
+                            />
+                        </div>
+                        <!-----pasword---->
+                        <div class="input-group input-group-lg pb-5">
+                            <div class="input-group-prepend pr-3">
+                                <span class="input-group-text" id="inputGroup-sizing-md"><i class="fas fa-unlock-alt"></i></span>
+                            </div>
+                            <input 
+                                    type="password" 
+                                    id="password" placeholder="password" 
+                                    name="password" 
+                                    class="form-control" 
+                                    aria-label="Large"
+                                    minlength="5"
+                                    maxlength="15" 
+                                    pattern="^[a-zA-Z0-9]{5,15}$"
+                                    title="require a mix of 6 strong characters"
+                                    required 
+                            />
+                        </div>
+            <!----register button-->
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <button class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm" type="submit">Add profile</button>
+                            </div>
+                        </div>
+             <!----end register btn-->       
+                    </div>
+                </div>
+            </div>
+        <!-----end modal---->
+        </form>
+    </div>
+    
+
+{% endblock %}

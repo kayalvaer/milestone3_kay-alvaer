@@ -18,11 +18,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+#activate home page
 @app.route("/")
-@app.route("/save_stories")
-def save_stories():
-    stories = mongo.db.stories.find()
-    return render_template("stories.html", stories=stories)
+@app.route("/home")
+def home():
+    #checks if user exits
+    if "user" in session:
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        return render_template(
+            "home.html", user=user)
+    else:
+        return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

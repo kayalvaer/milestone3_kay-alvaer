@@ -39,6 +39,7 @@ i{
     top: 20px;
     background-color: #fefefe;
     padding-bottom: 2em;
+    border-radius: 10px;
 }
 .register-icon{
     size: 50px;
@@ -73,3 +74,16 @@ p, h2{
 .msg-flash{
     line-height: 2;
 }
+
+#btn-alert{
+    animation: right_to_left 3s ease;
+}
+
+@keyframes right_to_left {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0;
+    }
+  }

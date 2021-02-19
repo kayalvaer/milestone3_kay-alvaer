@@ -16,6 +16,11 @@
     {% block styles %}
     {% endblock %}
     <title>Document</title>
+    <link
+            rel="shortcut icon"
+            type="image/png"
+            href="{{ url_for('static', filename='images/favicon.png')}}"
+    />
 </head>
 <body>
 
@@ -23,7 +28,7 @@
         <!---main navbar-->
           <nav class="container navstyle navbar navbar-expand-lg navbar-light bg-light text-warning border-none">
              <!-----middle logo-->
-             <a class="navbar-brand font-italic text-warning" href="{{ url_for('save_stories') }}">userStory master</a>
+             <a class="navbar-brand font-italic text-warning" href="{{ url_for('home') }}">userStory master</a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
              </button>
@@ -31,7 +36,7 @@
             <div class="collapse navbar-collapse pl-5 text-warning" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('save_stories') }}">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">About</a>
@@ -66,76 +71,14 @@
           </nav>
     </header>
 
-    <!---Hero section-->
-
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100 h-400" src="./static/css/images/pexels-huy-chien-tran-1756665.jpg" alt="First slide">
-                <div class="carousel-caption d-none d-md-block text-white">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-8 hero-info py-3 px-0">
-                                <h2><strong>Welcome to our dashboard</strong></h2>
-                                <p>A working system made to make your collaboration easier</p>
-                                <div class="border-top border-primary w-100 justify-content-center my-3"></div>
-                                <a href="#" class="btn bg-warning btn-lg">Sign In</a>
-                                <a href="#" class="btn bg-primary btn-lg">Register</a>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100 h-400" src="./static/css/images/pexels-fauxels-3184338.jpg" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block text-white">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-8 hero-info py-3">
-                                <h2><strong>Welcome to our dashboard</strong></h2>
-                                <p>A working system made to make your collaboration easier</p>
-                                <div class="border-top border-primary w-100 justify-content-center my-3"></div>
-                                <a href="#" class="btn bg-warning btn-lg">Sign In</a>
-                                <a href="#" class="btn bg-primary btn-lg">Register</a>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100 h-400" src="./static/css/images/pexels-christina-morillo-1181346.jpg" alt="Third slide">
-                 <div class="carousel-caption d-none d-md-block text-white">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-8 hero-info py-3">
-                                <h2><strong>Welcome to our dashboard</strong></h2>
-                                <p>A working system made to make your collaboration easier</p>
-                                <div class="border-top border-primary w-100 justify-content-center my-3"></div>
-                                <a href="#" class="btn bg-warning btn-lg" type="submit">Sign In</a>
-                                <a href="{{ url_for('register') }}" class="btn bg-primary btn-lg" type="submit">Register</a>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
     <section>
         <!----display flash messages-->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <button type="button" class="btn btn-warning d-flex justify-content-center w-100 bg-light size-md" data-toggle="snackbar" 
-                        data-content="{{ message }} <a href='https://example.org' class='btn btn-info'>Check out our website</a>" data-html-allowed="true" data-timeout="5">
-                        Alert!
+                    <button type="button" class="btn btn-warning d-flex justify-content-center w-100 bg-danger text-white btn-danger size-md p-2" data-toggle="snackbar"
+                        data-content="{{ message }}! <a href='https://example.org' class='btn'>Check out our website </a>" data-html-allowed="true" data-timeout="5" id="btn-alert">
+                        Alert!  <hr>  Alert! <hr> Alert!
                     </button>
                 {% endfor %}
             {% endif %}
