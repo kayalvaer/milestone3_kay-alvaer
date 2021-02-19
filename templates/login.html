@@ -2,20 +2,22 @@
 {% block info %}
    
     <div class="container">
-        <form class="reg-form my-5" method="POST" action="{{ url_for('register') }}">
+        <form class="reg-form my-5" method="POST" action="{{ url_for('login') }}">
         <div class="container d-flex justify-content-center pt-5 m-2" >
             <h3 class="formTitle text-primary">
-                Register
+                Sign In
             </h3>
         </div>
-        <div className="d-md-none bg-gray py-4 text-dark"></div>
+        <div className="d-md-none bg-gray py-4 text-dark">
+
+        </div>
         
         <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
           <div class="col col-lg-8 col-md-6 col-sm-6 col-xs-4 m-3">
             <!------username---->
             <div class="input-group input-group-lg pb-5 rounded-bottom">
                 <div class="input-group-prepend pr-3">
-                  <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user-cog"></i></span>
+                  <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
                 </div>
                 <input 
                     type="text"    
@@ -34,9 +36,9 @@
                 />
             </div>
             <!-----pasword---->
-            <div class="input-group input-group-lg pb-5 rounded-bottom">
+            <div class="input-group input-group-lg pb-5">
                 <div class="input-group-prepend pr-3">
-                  <span class="input-group-text" id="inputGroup-sizing-md"><i class="fas fa-lock"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-md"><i class="fas fa-unlock-alt"></i></span>
                 </div>
                 <input 
                     type="password" 
@@ -54,15 +56,15 @@
             <!----register button-->
             <div class="row">
                 <div class="col d-flex justify-content-center">
-                    <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm><i class="fas fa-sign-in-alt"></i>Sign In</button>
+                    <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm><i class="fas fa-sign-in-alt"></i>Join Us</button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col s12 d-flex justify-content-center">
-                    <div class="center-align">
-                        Now you can Sign In?
-                        <a href="{{ url_for('login')}}" class="text-primary">Sign In here</a>
+                <div class="col s12">
+                    <div class="align-center">
+                        Have you registered?
+                        <a href="{{ url_for('register')}}" class="text-cyan">Register here</a>
                     </div>
                 </div>
             </div>
@@ -71,6 +73,7 @@
         </div>
     </form>
     </div>
-   
+    <!----user redirected to login page---->
+    
 
 {% endblock %}
