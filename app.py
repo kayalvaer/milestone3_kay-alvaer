@@ -27,6 +27,24 @@ def save_stories():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if employee_name already registered in DB
+        registered_user = mongo.db.users.find_one(
+            {"employeename": request.form.get("employeename").lower()})
+
+        if registered_user:
+            flash("employeename already registered")
+            return redirect(url_for("register"))
+        #for unregistered user register user
+        register = {
+            "employeename": request.form.get("employeename").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # avail the new employee into 'session' or temporary page /cookie
+        session["employee"] = request.form.get("employeename").lower()
+        flash("Welcome to our Team!")
     return render_template("register.html")
 
 

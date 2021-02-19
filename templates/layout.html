@@ -13,8 +13,6 @@
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous" type="text/css">
      <!-- Material Design for Bootstrap fonts and icons -->
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    
-
     {% block styles %}
     {% endblock %}
     <title>Document</title>
@@ -109,12 +107,12 @@
                  <div class="carousel-caption d-none d-md-block text-white">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-8 hero-info pb-3">
+                            <div class="col-8 hero-info py-3">
                                 <h2><strong>Welcome to our dashboard</strong></h2>
                                 <p>A working system made to make your collaboration easier</p>
                                 <div class="border-top border-primary w-100 justify-content-center my-3"></div>
-                                <a href="#" class="btn bg-warning btn-lg">Sign In</a>
-                                <a href="#" class="btn bg-primary btn-lg">Register</a>
+                                <a href="#" class="btn bg-warning btn-lg" type="submit">Sign In</a>
+                                <a href="{{ url_for('register') }}" class="btn bg-primary btn-lg" type="submit">Register</a>
                             </div>
                         </div> 
                     </div>
@@ -129,22 +127,71 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      
-    <!----footer---->
- <!--    <div class="row flex-row text-secondary">
-        <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
-            <a href="https://vimeo.com/" className="e_post text-warning ml-md-3 my-auto "><i class="fa fa-vimeo" size="lg"></i></a>
-            <a href="https://youtube.com/" className="e_post text-warning ml-md-3 my-auto"><i className="fa fa-youtube-play"></i></a>
+
+    <section>
+        <!----display flash messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <button type="button" class="btn btn-warning d-flex justify-content-center w-100 bg-light size-md" data-toggle="snackbar" 
+                        data-content="{{ message }} <a href='https://example.org' class='btn btn-info'>Check out our website</a>" data-html-allowed="true" data-timeout="5">
+                        Alert!
+                    </button>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main>
+        {% block info %}
+        {% endblock %}
+    </main>
+
+    <!-----New footer---->
+     <!-- Footer -->
+     <footer class="container-fluid">
+        <div class="row d-flex justify-content-center flex-row text-secondary">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center py-5">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        
+                        <i class="fab fa-facebook fa-stack-2x fa-inverse "></i>
+                      </span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="http://userstory.com" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        
+                        <i class="fab fa-wordpress fa-stack-2x fa-inverse"></i>
+                    </span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        
+                        <i class="fab fa-github fa-stack-2x fa-inverse"></i>
+                    </span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright text-muted d-flex justify-content-center align-center">
+              Copyright &copy;
+              <a
+                class="text-muted"
+                href="https://github.com"
+                target="_blank"
+                >Kay Alvaer</a>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+            </p>
+          </div>
         </div>
-        <div class="col-md-8 d-flex justify-content-between text-warning bg-white">    
-            <span class="e_post my-auto">hello@yay.com</span>
-            <span class="e_post my-auto">Copyright 2020</span>
-        </div>
-    </div> -->
-    
-  
-    {% block info %}
-    {% endblock %}
+      </footer>
 
 
     <!-- Compiled and minified JQuery link -->
@@ -153,7 +200,14 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+
+    <!-- SnackbarJS plugin -->
+    <script src="https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js"></script>
+
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <!-- <script>
+        $('body').bootstrapMaterialDesign();
+    </script> -->
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

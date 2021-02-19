@@ -3,39 +3,60 @@
    
     <div class="container">
         <form class="reg-form my-5" method="POST" action="{{ url_for('register') }}">
-        <div class="container d-flex justify-content-center pt-5" >
+        <div class="container d-flex justify-content-center pt-5 m-2" >
             <h3 class="formTitle text-primary">
                 Register here!
             </h3>
         </div>
+        <div className="d-md-none bg-gray py-4 text-dark">
+
+        </div>
         
-        <div class="row justify-content-md-center border-light shadow rounded-lg">
-          <div class="col col-lg-8">
+        <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
+          <div class="col col-lg-8 col-md-6 col-sm-6 col-xs-4 m-3">
             <!------username---->
-            <div class="input-group input-group-lg pb-5">
+            <div class="input-group input-group-lg pb-5 rounded-bottom">
                 <div class="input-group-prepend pr-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-user"></i></span>
+                  <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" id="username" placeholder="username" name="username" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <!-------email------>
-            <div class="input-group input-group-lg pb-5">
-                <div class="input-group-prepend pr-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-envelope"></i></span>
-                </div>
-                <input type="text" id="email" placeholder="email" name="email" class="form-control bg-white" aria-label="Large" aria-describedby="inputGroup-sizing-sm" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com ">
+                <input 
+                    type="text"    
+                    id="input_username" 
+                    placeholder="employeename" 
+                    name="employeename" 
+                    class="form-control rounded-bottom" 
+                    aria-label="Large" 
+                    aria-describedby="inputGroup-sizing-sm"
+                    minlength="5"
+                    maxlength="15" 
+                    pattern="^[a-zA-Z0-9]{5,15}$"
+                    title="Must be a mix of more than five characters" 
+                    required
+                    
+                />
             </div>
             <!-----pasword---->
             <div class="input-group input-group-lg pb-5">
                 <div class="input-group-prepend pr-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-unlock-alt"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-md"><i class="fas fa-unlock-alt"></i></span>
                 </div>
-                <input type="text" id="Password" placeholder="Password" name="Password" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                <input 
+                    type="password" 
+                    id="password" placeholder="password" 
+                    name="password" 
+                    class="form-control" 
+                    aria-label="Large"
+                    minlength="5"
+                    maxlength="15" 
+                    pattern="^[a-zA-Z0-9]{5,15}$"
+                    title="require a mix of 6 strong characters"
+                    required 
+                />
             </div>
             <!----register button-->
             <div class="row">
                 <div class="col d-flex justify-content-center">
-                    <button type="button" class="btn btn-raised btn-success center-align btn-lg pl-3"><i class="fas fa-sign-in-alt"></i>Register Now</button>
+                    <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm><i class="fas fa-sign-in-alt"></i>Join Us</button>
                 </div>
             </div>
           </div>
