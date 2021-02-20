@@ -52,6 +52,7 @@ def register():
         # avail the new employee into 'session' or temporary page /cookie
         session["employee"] = request.form.get("employeename").lower()
         flash("Welcome to our Team!")
+        return redirect(url_for("employee", employeename=session["user"]))
     return render_template("register.html")
 
 
@@ -67,7 +68,9 @@ def login():
             if check_password_hash(
                 registered_user["password"], request.form.get("password")):
                     session["employee"] = request.form.get("employeename").lower()
-                    flash("Welcome to the team, {}".format(request.form.get("employeename")))
+                    flash("Welcome to the team, {}".format(
+                        request.form.get("employeename")))
+                    return redirect(url_for("employee", employeename=session["employee"]))
             else:
                 # incorrect password match
                 flash("Invalid Employeename and/or Password entered")
@@ -79,6 +82,37 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+# validate employee page
+@app.route("/employee/<employeename>", methods=["GET", "POST"])
+def employee(employeename):
+    # get the user's employeename, url-img and title from DB
+    employeename = mongo.db.users.find_one(
+        {"employeename": session["employee"]})["employeename"]
+    # get the session user's details from DB
+    details = list(mongo.db.details.find())
+
+    if session["employee"]:
+        return render_template(
+            "employee.html", employeename=employeename, details=details)
+
+    return redirect(url_for("employee"))
+
+
+# Add new employee in DB
+@app.route("/add_emp", methods=["GET", "POST"])
+def add_emp():
+    if request.method == "POST":
+        emp_info = {
+            "employee_name": request.form.get("employee_name"),
+            "employee_title": request.form.get("employee_title"),
+            "url_img": request.form.get("url_img"),
+            "password": request.form.get("password"),
+            "added_by": session["user"]
+        }
+        mongo.db.details.insert_one(emp_info)
+        return redirect("/employee/<employeename>")
 
 
 if __name__ == "__main__":

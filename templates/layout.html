@@ -39,7 +39,7 @@
                   <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="{{ url_for('employee', employeename=session['employee']) }}">employees</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Add Epic</a>
@@ -84,7 +84,6 @@
             {% endif %}
         {% endwith %}
     </section>
-
     <main>
         {% block info %}
         {% endblock %}
