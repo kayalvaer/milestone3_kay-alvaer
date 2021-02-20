@@ -35,27 +35,30 @@
           
             <div class="collapse navbar-collapse pl-5 text-warning" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('employee', employeename=session['employee']) }}">employees</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Add Epic</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Epics Manager</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign Out</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register') }}">Join Us</a>
-                </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                {% if session.employee %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Add Epic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Epics Manager</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('employee', employeename=session['employee']) }}">employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('signout') }}">Sign Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Join Us</a>
+                    </li>
+                {% endif %}
               </ul>
             
               <!---search icon-->
@@ -78,7 +81,7 @@
                 {% for message in messages %}
                     <button type="button" class="btn btn-warning d-flex justify-content-center w-100 bg-danger text-white btn-danger size-md p-2" data-toggle="snackbar"
                         data-content="{{ message }}! <a href='https://example.org' class='btn'>Check out our website </a>" data-html-allowed="true" data-timeout="5" id="btn-alert">
-                        Alert!  <hr>  Alert! <hr> Alert!
+                        Check down for Alert!  <hr>  Check down for Alert! <hr> Check down for Alert!
                     </button>
                 {% endfor %}
             {% endif %}

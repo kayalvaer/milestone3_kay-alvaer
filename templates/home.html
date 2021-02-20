@@ -65,4 +65,13 @@
         </a>
       </div>
 
+    {% for epic in epics %}
+        {{ epic.epic_name }}<br>
+        {{ epic.epic_name }}<br>
+        {{ epic.epic_description }}<br>
+        {{ epic.product_owner }}<br>
+        {{ epic.lead_developer }}<br>
+        {{ epic.due_date }}<br>
+    {% endfor %}
+
 {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block info %}
 
-    {% for story in stories %}
-        {{ story.story_name }}<br>
-        {{ story.epic_name }}<br>
-        {{ story.story_description }}<br>
-        {{ story.product_owner }}<br>
-        {{ story.lead_developer }}<br>
-        {{ story.due_date }}<br>
+    {% for epic in epics %}
+    {{ epic.epic_name }}<br>
+    {{ epic.epic_name }}<br>
+    {{ epic.epic_description }}<br>
+    {{ epic.product_owner }}<br>
+    {{ epic.lead_developer }}<br>
+    {{ epic.due_date }}<br>
     {% endfor %}
 
 {% endblock %}

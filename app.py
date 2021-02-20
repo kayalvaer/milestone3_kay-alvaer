@@ -32,6 +32,13 @@ def home():
         return render_template("home.html")
 
 
+@app.route("/")
+@app.route("/get_epics")
+def get_epics():
+    epics = mongo.db.epicss.find()
+    return render_template("epics.html", epics=epics)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -52,7 +59,7 @@ def register():
         # avail the new employee into 'session' or temporary page /cookie
         session["employee"] = request.form.get("employeename").lower()
         flash("Welcome to our Team!")
-        return redirect(url_for("employee", employeename=session["user"]))
+        return redirect(url_for("employee", employeename=session["employee"]))
     return render_template("register.html")
 
 
@@ -97,22 +104,37 @@ def employee(employeename):
         return render_template(
             "employee.html", employeename=employeename, details=details)
 
-    return redirect(url_for("employee"))
+    return redirect(url_for("login"))
 
 
-# Add new employee in DB
-@app.route("/add_emp", methods=["GET", "POST"])
-def add_emp():
+# Add more employee details in DB
+@app.route("/add_info", methods=["GET", "POST"])
+def add_info():
     if request.method == "POST":
-        emp_info = {
-            "employee_name": request.form.get("employee_name"),
-            "employee_title": request.form.get("employee_title"),
+        info = {
+            "info_name": request.form.get("info_name"),
             "url_img": request.form.get("url_img"),
+            "emp_title": request.form.get("emp_title"),
             "password": request.form.get("password"),
-            "added_by": session["user"]
+            
         }
-        mongo.db.details.insert_one(emp_info)
+        mongo.db.details.insert_one(info)
         return redirect("/employee/<employeename>")
+
+
+# Add page to see employee
+@app.route("/view_info/<info_name>")
+def view_info(info_name):
+    info = mongo.db.details.find_one({"_id": ObjectId(info_name)})
+    return render_template("view_info.html", info=info)
+
+
+@app.route("/signout")
+def signout():
+    # remove user from session cookie
+    flash("You are now signed out!")
+    session.pop("employee")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
