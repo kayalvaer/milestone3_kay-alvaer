@@ -140,6 +140,12 @@ def signout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_epic")
+def add_epic():
+    # add new epic
+    return render_template("add_epic.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),

@@ -4,7 +4,7 @@
     <div class="container">
         {% for epic in epics %}
         <div class="row p-5 d-flex justify-content-center">
-            <p class="accordion-title ">
+            <p class="accordion-title">
                
                 <a class="btn btn-primary border-dark shadow rounded-lg"
                     data-toggle="collapse" 
@@ -12,13 +12,10 @@
                     role="button" 
                     aria-expanded="false" 
                     aria-controls="multiCollapseExample1">
-                    <i class="fas fa-angle-down"></i> : <i class="fas fa-exclamation"></i>
-                    <strong>{{ epic.category }}</strong> : Due:{{ epic.due_date }}
+                    <i class="fas fa-angle-down"></i> 
+                    <strong>{{ epic.department }}</strong> : Due:{{ epic.due_date }}  
                 {% if epic.is_urgent == "on" %}
-                 
-                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                        Popover on top
-                    </button>
+                    <i class="fas fa-exclamation" data-toggle="tooltip" data-placement="top" title="Urgent!"></i>
                 {% endif %}
                 </a>
                 <button class="btn btn-primary" 
@@ -32,8 +29,8 @@
                 </button>
 
             </p>
-            <div class="row d-flex justify-content-center">
-                <div class="m-5 p-2 border-0 rounded">
+            <div class="row d-flex justify-content-center ">
+                <div class="m-5 p-2 rounded-bottom">
                     <div class="collapse multi-collapse m-0" 
                         id="multiCollapseExample1">
                     <div class="card-deck">

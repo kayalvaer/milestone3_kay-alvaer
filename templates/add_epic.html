@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% block info %}
+
+
+    <div class="container">
+        <form class="reg-form my-5" method="POST" action="">
+        <div class="container d-flex justify-content-center pt-5 m-2" >
+            <h3 class="formTitle text-primary">
+                Add New Epic
+            </h3>
+        </div>
+        <div className="d-md-none bg-gray py-4 text-dark">
+
+        </div>
+        
+        <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
+          <div class="col col-lg-10 col-md-6 col-sm-6 col-xs-4 m-3">
+            <!------epic name---->
+            <div class="input-group input-group-lg pb-5 rounded-bottom">
+                <div class="input-group-prepend pr-3">
+                  <span class="input-group-text "><i class="fas fa-tasks"></i></span>
+                </div>
+                    <input 
+                        type="text"    
+                        id="epic.epic_name" 
+                        placeholder="employeename" 
+                        name="epic.epic_name"
+                        minlength="2"
+                        maxlength="50" 
+                        pattern="^[a-zA-Z0-9]{5,15}$" 
+                        class="form-control rounded-bottom text-light" 
+                        aria-label="Large" 
+                        aria-describedby="inputGroup-sizing-sm"
+                        required
+                    />
+            </div>
+            <!-----user-story---->
+            <div class="input-group input-group-lg pb-5 rounded-bottom">
+                <div class="input-group-prepend pr-3">
+                  <span class="input-group-text "><i class="fas fa-user-cog"></i></span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea
+                    type="textarea
+                        rows="2"    
+                        id="story_description" 
+                        placeholder="user-story" 
+                        name="story_description"
+                        minlength="2"
+                        maxlength="200" 
+                        pattern="^[a-zA-Z0-9]{5,15}$" 
+                        class=" rounded-bottom" 
+                        aria-describedby="inputGroup-sizing-sm"
+                        required>
+                </textarea>
+            
+            </div>
+            <!-----responsiple team members---->
+            <div class="input-group input-group-lg mb-5 rounded-bottom">
+                <div class="col-sm-6 mb-5">
+                    <div class="input-group-prepend pr-3">
+                        <span class="input-group-text "><i class="fas fa-user"></i><h5>Product Owner</h5></span>
+                      </div>
+                      <input 
+                          type="text"    
+                          id="product_owner" 
+                          placeholder="Product owner" 
+                          name="product_owner" 
+                          class="form-control rounded-bottom" 
+                          aria-label="Large" 
+                          aria-describedby="inputGroup-sizing-sm"
+                          required
+                      />
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group-prepend pr-3">
+                        <span class="input-group-text "><i class="fas fa-code"></i><h5>Lead Developer</h5></span>
+                      </div>
+                      <input 
+                          type="text"    
+                          id="lead_developer" 
+                          placeholder="lead_developer" 
+                          name="lead_developer" 
+                          class="form-control rounded-bottom" 
+                          aria-label="Large" 
+                          aria-describedby="inputGroup-sizing-sm"
+                          required
+                      />
+                </div>
+            </div>
+
+            <!-----responsiple department and due date---->
+            <div class="input-group input-group-lg pb-5 rounded-bottom">
+                <div class="col-sm-6 mb-5">
+                    <div class="input-group-prepend pr-3">
+                        <span class="input-group-text "><i class="fas fa-users"></i><h5>Team</h5></span>
+                      </div>
+                      <input 
+                            type="text"
+                            id="category" 
+                            placeholder="assigned-team" 
+                            name="category"
+                            minlength="5"
+                            maxlength="15" 
+                            pattern="^[a-zA-Z0-9]{5,15}$" 
+                            class="form-control rounded-bottom" 
+                            aria-label="Large" 
+                            aria-describedby="inputGroup-sizing-sm"
+                            required
+                      />
+                </div>
+                <div class="col-sm-6" autocomplete="off">
+                    <div class="input-group-prepend pr-3">
+                        <span class="input-group-text "><i class="fas fa-calendar-day"></i><h5>Delivery date:</h5></span>
+                      </div>
+                    <input 
+                        type="text"    
+                        id="datepicker"
+                        data-provide="datepicker" 
+                        style='width: 300px' 
+                        placeholder="due_date" 
+                        name="due_date" 
+                        class="form-control rounded-bottom " 
+                        aria-label="Large" 
+                        aria-describedby="inputGroup-sizing-sm"
+                        required
+                    /> 
+                </div>
+            </div>
+
+            <!-----epic status---->
+            <div class="input-group input-group-lg pb-5 rounded-bottom">
+                <div class="col-sm-6">
+                    <div class="input-group-prepend pr-3">
+                        <span class="input-group-text "><i class="fas fa-exclamation-circle"></i><h5>Status</h5></span>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text ml-2">
+                            <input type="checkbox" id="is_urgent" name="is_urgent" aria-label="Checkbox for following text input">
+                             <span class="text-primary ml-3">is_urgent</span>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                      <!----register button-->
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm"><i class="fas fa-sign-in-alt"></i>Join Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 d-flex justify-content-center">
+                    <div class="align-center">
+                        Have you registered?
+                        <a href="{{ url_for('register')}}" class="text-cyan">Register here</a>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </form>
+    </div>
+
+{% endblock %}

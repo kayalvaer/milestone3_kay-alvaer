@@ -24,11 +24,24 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-body input').val(recipient)
 })
 
-//collapsible support stmt
-
+//collapsible enabler
 $('.collapse').collapse()
 
 
+//Tooltip enabler
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  
+})
 
-
-
+// Data Picker Initialization
+$(document).ready(function(){
+  $('#datepicker').datepicker({
+    format: 'DD-MM-YYYY',
+    yearRange: 3,
+    showClearBtn: true,
+    i18n: {
+      done: "select"
+    }
+	});
+});
