@@ -5,6 +5,7 @@ body, html{
 
 body{
     background-image: radial-gradient(circle, #ffffff, #e2a584);
+    height: 100%;
 }
 
 /* Navigation */
@@ -92,4 +93,16 @@ p, h2{
 
 .img-icons{
     font-size: 150px;
+}
+
+ /* footer */
+
+.footer{
+    height: 15px;
+    margin-top: 50px;
+}
+
+/* collapsible */
+p.accordion-title{
+    color: #fefefe;
 }

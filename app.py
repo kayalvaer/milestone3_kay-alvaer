@@ -18,6 +18,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+#activate epics and stories
+@app.route("/")
+@app.route("/get_epics")
+def get_epics():
+    epics = mongo.db.epics.find()
+    return render_template("epics.html", epics=epics)
+
+
 #activate home page
 @app.route("/")
 @app.route("/home")
@@ -32,11 +40,6 @@ def home():
         return render_template("home.html")
 
 
-@app.route("/")
-@app.route("/get_epics")
-def get_epics():
-    epics = mongo.db.epicss.find()
-    return render_template("epics.html", epics=epics)
 
 
 @app.route("/register", methods=["GET", "POST"])

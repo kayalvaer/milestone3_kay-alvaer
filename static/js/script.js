@@ -24,6 +24,10 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-body input').val(recipient)
 })
 
+//collapsible support stmt
+
+$('.collapse').collapse()
+
 
 
 
