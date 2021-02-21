@@ -17,7 +17,7 @@ nav.container.navstyle.navbar{
     box-shadow: none;
     color: #bf360c; 
 }
-i, h3, .nav-link:hover{
+i, h3, h5, .nav-link:hover{
     color: #bf360c!important;
 }
 

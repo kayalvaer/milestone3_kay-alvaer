@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_epics")
 def get_epics():
-    epics = mongo.db.epics.find()
+    epics = list(mongo.db.epics.find())
     return render_template("epics.html", epics=epics)
 
 

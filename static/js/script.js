@@ -32,4 +32,3 @@ $('.collapse').collapse()
 
 
 
-
