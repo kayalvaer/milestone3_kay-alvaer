@@ -143,7 +143,8 @@ def signout():
 @app.route("/add_epic")
 def add_epic():
     # add new epic
-    return render_template("add_epic.html")
+    products = mongo.db.products.find().sort("product_name",1)
+    return render_template("add_epic.html", products=products)
 
 
 if __name__ == "__main__":

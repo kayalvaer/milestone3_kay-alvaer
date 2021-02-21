@@ -35,8 +35,7 @@ $(function () {
 })
 
 // Data Picker Initialization
-$(document).ready(function(){
-  $('#datepicker').datepicker({
+$('#datepicker').datepicker({
     format: 'DD-MM-YYYY',
     yearRange: 3,
     showClearBtn: true,
@@ -44,4 +43,4 @@ $(document).ready(function(){
       done: "select"
     }
 	});
-});
+

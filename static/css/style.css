@@ -1,9 +1,3 @@
-/* Bootstrap datetimepicker */
-@import "datetimepicker/css/bootstrap-datetimepicker.css";
-
-/* Propeller datetimepicker */
-@import "datetimepicker/css/pmd-datetimepicker.css";
-
 body, html{
     box-sizing: border-box;
     margin: 0;

@@ -6,10 +6,6 @@
     <!-----Fontawesome cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <!------Bootstrap datepicker-->
-    <!-- Datepicker -->
-    <link href='bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
-    <script src='bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- Material Design for Bootstrap CSS -->
@@ -86,8 +82,8 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <button type="button" class="btn btn-warning d-flex justify-content-center w-100 bg-danger text-white btn-danger size-md p-2" data-toggle="snackbar"
-                        data-content="{{ message }}! <a href='https://example.org' class='btn'>Check out our website </a>" data-html-allowed="true" data-timeout="5" id="btn-alert">
+                    <button type="button" class="collapse btn btn-warning d-flex justify-content-center w-100 bg-danger text-white btn-danger size-md p-2" data-toggle="snackbar"
+                        data-content="{{ message }}! <a href='https://example.org' class='btn'>Check out our website </a>" data-html-allowed="true" data-timeout="1000" id="btn-alert">
                         Click here & Check down for Alert!  <hr>  click here & Check down for Alert! <hr> Click here & Check down for Alert!
                     </button>
                 {% endfor %}
