@@ -140,9 +140,24 @@ def signout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_epic")
+@app.route("/add_epic", methods=["GET", "POST"])
 def add_epic():
-    # add new epic
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        epic = {
+            "product_name": request.form.get("product_name"),
+            "epic_name": request.form.get("epic_name"),
+            "story_description": request.form.get("story_description"),
+            "product_owner": request.form.get("product_owner"),
+            "lead_developer": request.form.get("lead_developer"),
+            "due_date": request.form.get("due_date"),
+            "is_urgent": is_urgent,
+            
+        }
+        mongo.db.epics.insert_one(epic)
+        flash("New epic now added")
+        return redirect(url_for("get_epics"))
+
     products = mongo.db.products.find().sort("product_name",1)
     return render_template("add_epic.html", products=products)
 

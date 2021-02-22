@@ -2,18 +2,14 @@
 {% block info %}
 
 
+    <!-------code inspired by lecture tutorial from code institute-->
+    <!-----bootstrap materialize design used instead https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/bootstrap-components/collapse/---->
     <div class="container">
-        <form class="reg-form my-5" method="POST" action="">
+        <form class="reg-form my-5" method="POST" action="{{ url_for('add_epic') }}">
         <div class="container d-flex justify-content-center pt-5 m-2" >
             <h3 class="formTitle text-primary">
-                Add New Epic
+                Epics List
             </h3>
-        </div>
-        
-        
-        <div className="row d-md-none bg-gray py-4 text-dark">
-      
-            
         </div>
         
         <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
@@ -46,7 +42,6 @@
                         name="epic_name"
                         minlength="2"
                         maxlength="50" 
-                        pattern="^[a-zA-Z0-9]{5,15}$" 
                         class="form-control rounded-bottom" 
                         aria-label="Large" 
                         aria-describedby="inputGroup-sizing-sm"
@@ -67,7 +62,6 @@
                         name="story_description"
                         minlength="2"
                         maxlength="200" 
-                        pattern="^[a-zA-Z0-9]{5,15}$" 
                         class=" rounded-bottom" 
                         aria-describedby="inputGroup-sizing-sm"
                         required>
@@ -121,7 +115,6 @@
                             name="category"
                             minlength="5"
                             maxlength="15" 
-                            pattern="^[a-zA-Z0-9]{5,15}$" 
                             class="form-control rounded-bottom" 
                             aria-label="Large" 
                             aria-describedby="inputGroup-sizing-sm"
@@ -163,10 +156,10 @@
                       </div>
                 </div>
                 <div class="col-sm-6">
-                      <!----register button-->
+                      <!----add epic button-->
                     <div class="row">
                         <div class="col d-flex justify-content-center">
-                            <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm"><i class="fas fa-sign-in-alt"></i>Join Us</button>
+                            <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm"><i class="fas fa-folder-plus"></i>Add Epic</button>
                         </div>
                     </div>
                 </div>
