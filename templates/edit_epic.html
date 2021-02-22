@@ -12,7 +12,7 @@
             </h3>
         </div>
         
-        <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
+        <div class="d-flex d-flex justify-content-center border-light shadow rounded-lg">
           <div class="col col-lg-10 col-md-6 col-sm-6 col-xs-4 m-3">
             
             <!------product category---->
@@ -20,11 +20,13 @@
                 <div class="col-md-12 my-3">
                   <label for="product_name" class="mr-sm-2"><h5><i class="fas fa-folder-open"></i>Epic Category</h5></label>
                     <select class="custom-select mr-sm-2" id="product_name" name="product_name" >
-                    {% for product in products %} 
-                    <option selected>Choose ...</option>
-                        <option class="text-primary" value="{{ product.product_name }}">
-                            {{ product.product_name }}
-                        </option>
+                        <option value="" disabled>Choose ...</option>
+                        {% for product in products %} 
+                            {% if product.product_name == epic.product_name %}
+                                <option value="{{ product.product_name }}" class="value text-primary" selected>{{ product.product_name }}</option>
+                            {% else %}
+                                <option value="{{ product.product_name }}" class="text-primary">{{ product.product_name }}</option>
+                            {% endif %}
                     {% endfor %}  
                     </select>
                   
@@ -36,6 +38,7 @@
                   <span class="input-group-text "><i class="fas fa-tasks"></i></span>
                 </div>
                     <input 
+                        value="{{ epic.epic_name }}"
                         type="text"    
                         id="epic_name" 
                         placeholder="epic_name" 
@@ -65,6 +68,7 @@
                         class=" rounded-bottom" 
                         aria-describedby="inputGroup-sizing-sm"
                         required>
+                    {{- epic.story_description -}}
                 </textarea>
             
             </div>
@@ -75,7 +79,8 @@
                         <span class="input-group-text "><i class="fas fa-user"></i><h5>Product Owner</h5></span>
                       </div>
                       <input 
-                          type="text"    
+                          type="text"
+                          value="{{ epic.product_owner }}"    
                           id="product_owner" 
                           placeholder="Product owner" 
                           name="product_owner" 
@@ -90,7 +95,8 @@
                         <span class="input-group-text "><i class="fas fa-code"></i><h5>Lead Developer</h5></span>
                       </div>
                       <input 
-                          type="text"    
+                          type="text"
+                          value="{{ epic.lead_developer }}"    
                           id="lead_developer" 
                           placeholder="lead_developer" 
                           name="lead_developer" 
@@ -110,6 +116,7 @@
                       </div>
                       <input 
                             type="text"
+                            value="{{ epic.department }}"
                             id="category" 
                             placeholder="assigned-team" 
                             name="category"
@@ -121,15 +128,14 @@
                             required
                       />
                 </div>
-                <div class="col-sm-6" autocomplete="off">
+                <div class="col-sm-6">
                     <div class="input-group-prepend pr-3">
                         <span class="input-group-text "><i class="fas fa-calendar-day"></i><h5>Delivery date:</h5></span>
                       </div>
                     <input 
-                        type="text"    
+                        type="text"
+                        value="{{ epic.due_date }}"    
                         id="datepicker"
-                        data-provide="datepicker" 
-                        style='width: 300px' 
                         placeholder="due_date" 
                         name="due_date" 
                         class="form-control rounded-bottom " 
@@ -149,23 +155,35 @@
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <div class="input-group-text ml-2">
-                            <input type="checkbox" id="is_urgent" name="is_urgent" aria-label="Checkbox for following text input">
-                             <span class="text-primary ml-3">is_urgent</span>
+                            {% if epic.is_urgent == "on" %}
+                                <input type="checkbox" id="is_urgent" name="is_urgent" aria-label="Checkbox for following text input" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_urgent" name="is_urgent" aria-label="Checkbox for following text input">
+                            {% endif %}
+                            <span class="text-primary ml-3">is_urgent</span>
                           </div>
                         </div>
                       </div>
                 </div>
-                <div class="col-sm-6">
-                      <!----add epic button-->
-                    <div class="row">
+            </div>
+               <!----edit epic button-->
+            <div class="row d-flex justify-content-center flex-wrap">
+                        <!----cancel btn-->
                         <div class="col d-flex justify-content-center">
-                            <button type="submit" class="btn btn-raised btn-primary center-align btn-lg px-3 btn-block size-md sm-size-sm"><i class="fas fa-redo"></i>Edit Epic</button>
+                                <a href="{{ url_for('get_epics') }}" 
+                                class="btn btn-raised btn-warning btn-block ">
+                                    Cancel 
+                                    <i class="fas fa-cut"></i>
+                                </a>
+                        </div>
+                    
+                        <div class="col d-flex justify-content-center">
+                            <button type="submit" class="btn btn-raised btn-primary btn-block"><i class="fas fa-redo pr-4"></i>Edit</button>
                         </div>
                     </div>
-                </div>
             </div>
             <div class="row">
-                <div class="col s12 d-flex justify-content-center">
+                <div class="col-sm-12 d-flex justify-content-center">
                     <div class="align-center">
                         Have you registered?
                         <a href="{{ url_for('register')}}" class="text-cyan">Register here</a>

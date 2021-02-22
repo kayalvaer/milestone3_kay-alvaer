@@ -34,13 +34,9 @@ $(function () {
   
 })
 
-// Data Picker Initialization
-$('#datepicker').datepicker({
-    format: 'DD-MM-YYYY',
-    yearRange: 3,
-    showClearBtn: true,
-    i18n: {
-      done: "select"
-    }
-	});
+//bootstrapMaterialDesign
+$(document).ready(function() { 
+  $('body').bootstrapMaterialDesign(); 
+});
+
 
