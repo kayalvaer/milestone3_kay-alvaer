@@ -30,10 +30,10 @@ def get_epics():
 @app.route("/")
 @app.route("/home")
 def home():
-    #checks if user exits
+    #checks if employee exits
     if "user" in session:
         user = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
+            {"employeename": session["user"]})["employeename"]
         return render_template(
             "home.html", user=user)
     else:
@@ -162,12 +162,44 @@ def add_epic():
     return render_template("add_epic.html", products=products)
 
 
-
 @app.route("/edit_epic/<epic_id>", methods=["GET", "POST"])
 def edit_epic(epic_id):
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        submit = {
+            "product_name": request.form.get("product_name"),
+            "epic_name": request.form.get("epic_name"),
+            "story_description": request.form.get("story_description"),
+            "product_owner": request.form.get("product_owner"),
+            "lead_developer": request.form.get("lead_developer"),
+            "due_date": request.form.get("due_date"),
+            "is_urgent": is_urgent,
+        }
+        mongo.db.epics.update({"_id": ObjectId(epic_id)}, submit)
+        flash("Successfully Updated Changes")
+
     epic = mongo.db.epics.find_one({"_id": ObjectId(epic_id)})
     products = mongo.db.products.find().sort("product_name", 1)
     return render_template("edit_epic.html", epic=epic, products=products)
+
+
+@app.route("/delete_epic/<epic_id>")
+def delete_epic(epic_id):
+    mongo.db.epics.remove({"_id": ObjectId(epic_id)})
+    flash("Deleted the epic now!")
+    return redirect(url_for("get_epics"))
+
+
+# 404 page not found error
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html', error=error), 404
+
+
+# 500 internal server error
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html', error=error), 500
 
 
 if __name__ == "__main__":
