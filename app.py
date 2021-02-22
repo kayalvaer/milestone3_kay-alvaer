@@ -162,6 +162,14 @@ def add_epic():
     return render_template("add_epic.html", products=products)
 
 
+
+@app.route("/edit_epic/<epic_id>", methods=["GET", "POST"])
+def edit_epic(epic_id):
+    epic = mongo.db.epics.find_one({"_id": ObjectId(epic_id)})
+    products = mongo.db.products.find().sort("product_name", 1)
+    return render_template("edit_epic.html", epic=epic, products=products)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
