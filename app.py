@@ -196,6 +196,19 @@ def get_products():
     return render_template("products.html", products=products)
 
 
+@app.route("/add_product", methods=["GET", "POST"])
+def add_product():
+    if request.method == "POST":
+        product = {
+            "product_name": request.form.get("product_name")
+        }
+        mongo.db.products.insert_one(product)
+        flash("Added New Epic Category")
+        return redirect(url_for("get_products"))
+
+    return render_template("add_product.html")
+
+
 # 404 page not found error
 @app.errorhandler(404)
 def not_found_error(error):

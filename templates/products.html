@@ -6,9 +6,21 @@
         Manage Epics
 </h3>
 
+<div class="row d-flex justify-content-center">
+    
+    <div class="row">
+        <div class="col d-flex justify-content-center text-white">
+            <span type="submit" class="btn btn-primary bg-light center-align btn-lg px-3 ml-3 size-md sm-size-sm">
+                <a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus pr-5"></i>Add Epic Category</a>
+            </span>
+            
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
-    <div class="p-4 card-deck text-shadow d-flex flex-wrap justify-content-around mb-2 px-0">
+    <div class="d-flex md-6 flex-wrap justify-content-around card-deck mb-2 px-0 p-4 ">
             {% for product in products %}
             <div class="card epic-card">
                 <img class="card-img-top epic-card" src="{{ url_for('static', filename='icons/cookie-the-pom-gySMaocSdqs-unsplash.jpg')}}" alt="Card image cap">
