@@ -209,6 +209,20 @@ def add_product():
     return render_template("add_product.html")
 
 
+@app.route("/edit_product/<product_id>", methods=["GET", "POST"])
+def edit_product(product_id):
+    if request.method == "POST":
+        submit = {
+            "product_name": request.form.get("product_name")
+        }
+        mongo.db.products.update({"_id": ObjectId(product_id)}, submit)
+        flash("Successfully updated new Epic Category")
+        return redirect(url_for("get_products"))
+
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+    return render_template("edit_product.html", product=product)
+
+
 # 404 page not found error
 @app.errorhandler(404)
 def not_found_error(error):

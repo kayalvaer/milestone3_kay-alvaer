@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block info %}
+
+
+    <!-------code inspired by lecture tutorial from code institute-->
+    <!-----bootstrap materialize design used for styling-->
+    <div class="container">
+        <form class="reg-form my-5" method="POST" action="{{ url_for('edit_product', product_id=product._id) }}">
+        <div class="container d-flex justify-content-center pt-5 m-2" >
+            <h3 class="formTitle text-primary">
+                Edit Epic Category
+            </h3>
+        </div>
+        
+        <div class="row d-flex d-flex justify-content-center border-light shadow rounded-lg">
+          <div class="col col-lg-10 col-md-6 col-sm-6 col-xs-4 m-3">
+            
+            <!------product category---->
+            <div class="input-group input-group-lg align-items-center">
+                <div class="input-group input-group-lg pb-5 mt-4 rounded-bottom">
+                    <div class="input-group-prepend pr-3">
+                    <span class="input-group-text "><i class="fas fa-folder-open"></i></span>
+                    </div>
+                        <input 
+                            type="text"    
+                            id="product_name" 
+                            value="{{ product.product_name }}"
+                            placeholder="product_name" 
+                            name="product_name"
+                            minlength="2"
+                            maxlength="30" 
+                            class="form-control rounded-bottom" 
+                            aria-label="Large" 
+                            aria-describedby="inputGroup-sizing-sm"
+                            required
+                        />
+                </div>
+        <!-----responsiple team members---->
+            <!----edit epic category button-->
+                
+            <div class="input-group input-group-lg mb-5 rounded-bottom d-flex justify-content-center">
+                <div class="col-sm-5 mb-5 pl-3">
+                    <a href="{{ url_for('get_products') }}" 
+                        class="btn btn-raised btn-warning btn-block ">
+                            Cancel 
+                        <i class="fas fa-cut"></i>
+                    </a>
+                </div>
+                <div class="col-sm-5">
+                    <button type="submit" class="btn btn-raised btn-primary btn-block"><i class="fas fa-redo pr-4"></i>Edit</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </form>
+    </div>
+
+{% endblock %}

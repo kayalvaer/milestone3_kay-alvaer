@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.product_name }}</h5>
                         <p class="card-text">This will display data from MongoDB for relevant epic categories.</p>
-                        <a href="#" class="btn btn-primary card-link">EDIT</a>
+                        <a href="{{ url_for('edit_product', product_id=product._id) }}" class="btn btn-primary card-link">EDIT</a>
                         <a href="#" class="btn btn-warning card-link">DELETE</a>
                     </div>
                 
