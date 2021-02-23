@@ -2,7 +2,7 @@
 {% block info %}
 
 
-<h3 class=" container formTitle text-primary p-5 align-center">
+<h3 class=" container formTitle text-primary p-5 d-flex justify-content-center">
         Manage Epics
 </h3>
 
@@ -20,20 +20,23 @@
 
 
 <div class="container">
-    <div class="d-flex md-6 flex-wrap justify-content-around card-deck mb-2 px-0 p-4 ">
+    <div class="row d-flex flex-wrap justify-content-around ">
+    <div class="card-deck px-0 p-4 col-sm-12 md-12 pl-5 flex-wrap">
+        
             {% for product in products %}
-            <div class="card epic-card">
+            <div class="card epic-card ">
                 <img class="card-img-top epic-card" src="{{ url_for('static', filename='icons/cookie-the-pom-gySMaocSdqs-unsplash.jpg')}}" alt="Card image cap">
                        
                     <div class="card-body">
                         <h5 class="card-title">{{ product.product_name }}</h5>
                         <p class="card-text">This will display data from MongoDB for relevant epic categories.</p>
                         <a href="{{ url_for('edit_product', product_id=product._id) }}" class="btn btn-primary card-link">EDIT</a>
-                        <a href="#" class="btn btn-warning card-link">DELETE</a>
+                        <a href="{{ url_for('delete_product', product_id=product._id) }}" class="btn btn-warning card-link">DELETE</a>
                     </div>
                 
             </div>
             {% endfor %}
         </div>
+    </div>
 </div>
 {% endblock %}

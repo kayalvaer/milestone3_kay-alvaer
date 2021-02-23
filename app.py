@@ -223,6 +223,13 @@ def edit_product(product_id):
     return render_template("edit_product.html", product=product)
 
 
+@app.route("/delete_product/<product_id>")
+def delete_product(product_id):
+    mongo.db.products.remove({"_id": ObjectId(product_id)})
+    flash("Successfully deleted epic category")
+    return redirect(url_for("get_products"))
+
+
 # 404 page not found error
 @app.errorhandler(404)
 def not_found_error(error):
