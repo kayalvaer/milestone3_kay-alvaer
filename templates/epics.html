@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-sm-3">
                         <i class="fas fa-caret-down"></i>
-                        {% if session.user|lower == epic.created_by|lower %}
+                        {% if session.employee %}
                             <a href="{{ url_for('delete_epic', epic_id=epic._id) }}" class="btn-lg text-primary lighten-1"><i class="fas fa-thumbs-up text-warning"></i></a>
                             <a href="{{ url_for('edit_epic', epic_id=epic._id) }}" class="btn-lg accent-4"><i class="fas fa-redo text-primary"></i></a>
                         {% endif %}

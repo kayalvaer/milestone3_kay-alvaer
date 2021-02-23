@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block info %}
+
+
+<h3 class=" container formTitle text-primary p-5 align-center">
+        Manage Epics
+</h3>
+
+
+<div class="container">
+    <div class="p-4 card-deck text-shadow d-flex flex-wrap justify-content-around mb-2 px-0">
+            {% for product in products %}
+            <div class="card epic-card">
+                <img class="card-img-top epic-card" src="{{ url_for('static', filename='icons/cookie-the-pom-gySMaocSdqs-unsplash.jpg')}}" alt="Card image cap">
+                       
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.product_name }}</h5>
+                        <p class="card-text">This will display data from MongoDB for relevant epic categories.</p>
+                        <a href="#" class="btn btn-primary card-link">EDIT</a>
+                        <a href="#" class="btn btn-warning card-link">DELETE</a>
+                    </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

@@ -190,6 +190,12 @@ def delete_epic(epic_id):
     return redirect(url_for("get_epics"))
 
 
+@app.route("/get_products")
+def get_products():
+    products = list(mongo.db.products.find().sort("product_name", 1))
+    return render_template("products.html", products=products)
+
+
 # 404 page not found error
 @app.errorhandler(404)
 def not_found_error(error):
