@@ -3,7 +3,7 @@
 
 <div class="container d-flex justify-content-center pt-5" >
     <h3 class="formTitle text-primary">
-        All Tasks
+        All Epics
     </h3>
 </div>
 
@@ -60,7 +60,8 @@
                 <div class="card-header d-flex justify-content-center" id="epic_name">
                     <div class="col-sm-8">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="epic_name" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{epic._id}}" 
+                                aria-expanded="true" aria-controls="#collapse-{{epic._id}}">
                                 <i class="fas fa-angle-down"></i> 
                                 <strong>{{ epic.epic_name }}</strong> : Due:{{ epic.due_date }}  
                             {% if epic.is_urgent == "on" %}
@@ -78,7 +79,7 @@
                     </div>
                 </div>
           
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapse-{{epic._id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <h5 class="card-title">User Stories</h5>
                             <p class="card-text">{{ epic.epic_name }}.</p>

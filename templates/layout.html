@@ -68,11 +68,18 @@
             
               <!---search icon-->
               <div class="bmd-form-group bmd-collapse-inline pull-xs-left pr-5">
-                <button class="btn bmd-btn-icon" for="search" data-toggle="collapse" data-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
+                <button class="btn bmd-btn-icon" for="search" 
+                    data-toggle="collapse" 
+                    data-target="#collapse-{{ url_for('search') }}" 
+                    aria-expanded="false" 
+                    aria-controls="collapse-{{ url_for('search') }}">
                   <i class="material-icons">search</i>
                 </button>  
-                <span id="collapse-search" class="collapse">
-                  <input class="form-control" type="text" id="search" placeholder="Enter your query...">
+                <span id="collapse-{{ url_for('search') }}" class="collapse">
+                  <input class="form-control" 
+                  type="text" id="{{ url_for('search') }}" 
+                  name="search" 
+                  placeholder="Enter your query...">
                 </span>
               </div>
             </div>
