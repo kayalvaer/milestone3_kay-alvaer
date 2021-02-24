@@ -6,22 +6,20 @@
 
 <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-center p-5">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-7">
             <div class="img-icons">
                 <a href="{{ url_for('home') }}"><img class="welcome-img img-fluid"
                         src="{{ url_for('static', filename='icons/undraw_welcome_cats_thqn.svg')}}" alt="employee welcome"></a>
                 <a href="{{ url_for('home') }}"></a>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <!-------Add employee----->
-            <button id="add-employee" type="submit" class="btn bmd-btn-icon">
-                <a href="{{ url_for('add_info') }}"><i class="fas fa-user-plus text-primary"></i></a> 
-            </button>
+            
 
             <!-- Team list -->
             <div class="emp-list">
-                
+
                 {% if emp_all|length > 0 %}
                 <ul class="col-s12 d-flex justify-content-center">
                     {% for list in emp_all %}
@@ -37,130 +35,28 @@
                     {% endfor %}
                 </ul>
                 {% else %}
+                
+               
                     <!-- Message welcoming new users -->
-                    <div class="welcome-user">
-                        <h2>Hello, {{ employeename.capitalize() }}</h2>
-                        <p>If not done already, You can register your details here for better collaboration!</p>
+                <div class="row d-flex d-flex justify-content-center border-light rounded-lg">
+                    <div class="row welcome-user">
+                        
+                        <div class="col-md-12 my-3 d-flex justify-content-center">
+                            <button id="add-employee" type="submit" class="btn bmd-btn-icon mr-3">
+                                <a href="{{ url_for('register') }}"><i class="fas fa-user-plus text-primary"></i></a> 
+                            </button>
+                            <h2>Hello, {{ employeename.capitalize() }}</h2>
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <p class="pl-5 emp-p">Are you looking to register a collegue, You click button above here for 
+                                better collaboration. Otherwise feel free to explore our workingspace.
+                                Contact your Product owner or admin if anything. Happy Day! 
+                            </p>
+                        </div>
                     </div>
-                {% endif %}
+                </div>
+               {% endif %} 
             </div>
-   
-        
-<!-------modal start----->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="{{ url_for('register') }}" data-whatever="{{ employeename.capitalize() }}">Add details</button>
-           
-           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-             <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                 <div class="modal-header">
-                   <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                   </button>
-                 </div>
-                 <div class="modal-body">
-                   <form>
-                    <!------employeename---->
-                     <div class="form-group">
-                       <div class="input-group input-group-lg pb-5 rounded-bottom">
-                        <div class="input-group-prepend pr-3">
-                            <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input 
-                            type="text"    
-                            id="input_username" 
-                            placeholder="employeename" 
-                            name="employeename" 
-                            class="form-control rounded-bottom" 
-                            aria-label="Large" 
-                            aria-describedby="inputGroup-sizing-sm"
-                            minlength="5"
-                            maxlength="15" 
-                            pattern="^[a-zA-Z0-9]{5,15}$"
-                            title="Must be a mix of more than five characters" 
-                            required
-                        />
-                    </div>
-                    </div>
-                    <!------employee image URL---->
-                    <div class="form-group">
-                        <div class="input-group input-group-lg pb-5 rounded-bottom">
-                            <div class="input-group-prepend pr-3">
-                                <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-upload"></i></span>
-                            </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                <label class="custom-file-label" for="img_url">Upload image</label>
-                                <input 
-                                    type="text"    
-                                    id="url_img" 
-                                    placeholder="url_img" 
-                                    name="url_img"
-                                    minlength="5"
-                                    maxlength="100" 
-                                    class="form-control rounded-bottom" 
-                                    aria-label="Large" 
-                                    title="upload your image here" 
-                                    required
-                                />
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <!------job title---->
-                    <div class="form-group">
-                        <div class="input-group input-group-lg pb-5 rounded-bottom">
-                            <div class="input-group-prepend pr-3">
-                                <span class="input-group-text " id="inputGroup-sizing-md"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input 
-                                    type="text"    
-                                    id="employee_title" 
-                                    placeholder="employee_title" 
-                                    name="employee_title" 
-                                    class="form-control rounded-bottom" 
-                                    aria-label="Large" 
-                                    aria-describedby="inputGroup-sizing-sm"
-                                    minlength="5"
-                                    maxlength="100" 
-                                    title="Enter job title or department" 
-                                    required
-                            />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <!-----pasword---->
-                        <div class="input-group input-group-lg pb-5">
-                            <div class="input-group-prepend pr-3">
-                                <span class="input-group-text" id="inputGroup-sizing-md"><i class="fas fa-unlock-alt"></i></span>
-                            </div>
-                            <input 
-                                    type="password" 
-                                    id="password" 
-                                    placeholder="password" 
-                                    name="password" 
-                                    class="form-control" 
-                                    aria-label="Large"
-                                    minlength="5"
-                                    maxlength="15" 
-                                    pattern="^[a-zA-Z0-9]{5,15}$"
-                                    title="require a mix of 6 strong characters"
-                                    required 
-                            />
-                        </div>
-                    </div>
-                   </form>
-                 </div>
-                 <div class="row">
-                    <div class="modal-footer col d-flex justify-content-center">
-                        <button type="button" class="btn btn-warning" type="submit" data-dismiss="modal"><i class="fas fa-save"></i></button>
-                        <button type="button" class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i></button>
-                    </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-        <!-------end modal----->
     </div>
 </div>
 {% endblock %}

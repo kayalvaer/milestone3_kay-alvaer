@@ -1,21 +1,66 @@
 {% extends "layout.html" %}
 {% block info %}
 
-<div class="container d-flex justify-content-center pt-5 m-2" >
+<div class="container d-flex justify-content-center pt-5" >
     <h3 class="formTitle text-primary">
         All Tasks
     </h3>
 </div>
 
+
+<!-- test-->
+
+<div class="row d-flex d-flex justify-content-center border-light rounded-lg">
+   <!--  <div class="col col-lg-10 col-md-6 col-sm-6 col-xs-4 m-3"> -->
+      
+      <!------product category---->
+      <form action="{{ url_for('search') }}" method="post" class="col-s12">
+            <div class="input-group input-group-lg p-5 mt-4 rounded-bottom">                
+
+                <!------search input & btns-->
+                <div class="row ">
+                    <!----cancel btn-->
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text "><i class="fas fa-search text-dark"></i></span>
+                        </div>
+                        <input 
+                              type="text"    
+                              id="find" 
+                              name="find"
+                              minlength="2"
+                              maxlength="30"
+                              placeholder="find epics" 
+                              class="form-control rounded-bottom validate" 
+                              aria-describedby="inputGroup-sizing-sm"
+                              required
+                        />  
+                    </div>
+                
+                    <div class="col d-flex justify-content-center ">
+                        <a href="{{ url_for('get_epics') }}" 
+                            class="btn btn-raised btn-warning mr-3">
+                                Reset 
+                            <i class="fas fa-sync"></i>
+                        </a>
+                
+                        <button type="submit" class="btn btn-raised btn-primary mr-3"><i class="fas fa-search pr-4"></i>Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- </div> -->
+  </div>
 <!-----tasl list------>
     <div class="container mt-5">
         <div id="accordion d-flex justify-content-center">
             {% for epic in epics %}
             <div class="card">
-                <div class="card-header d-flex justify-content-center" id="headingOne">
+                <div class="card-header d-flex justify-content-center" id="epic_name">
                     <div class="col-sm-8">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="epic_name" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="fas fa-angle-down"></i> 
                                 <strong>{{ epic.epic_name }}</strong> : Due:{{ epic.due_date }}  
                             {% if epic.is_urgent == "on" %}

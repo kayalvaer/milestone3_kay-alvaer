@@ -26,6 +26,14 @@ def get_epics():
     return render_template("epics.html", epics=epics)
 
 
+#search epics function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    find = request.form.get("find")
+    epics = list(mongo.db.epics.find({"$text": {"$search": find}}))
+    return render_template("epics.html", epics=epics)
+
+
 #activate home page
 @app.route("/")
 @app.route("/home")
@@ -228,6 +236,7 @@ def delete_product(product_id):
     mongo.db.products.remove({"_id": ObjectId(product_id)})
     flash("Successfully deleted epic category")
     return redirect(url_for("get_products"))
+
 
 
 # 404 page not found error
