@@ -1,4 +1,4 @@
-<h1 class="align-center">UserManager workspace site</h1>
+<h1 class="align-center">userStory Master workspace site</h1>
 
 ## Code Institute: Milestone Project 3
 
@@ -126,7 +126,7 @@ Some images were used in the website and resized using [tinypng site](https://ti
 
 - #### Wireframes:
 
-- Paper wireframes and Mockup on figma was designed for the project. Most of the work was done on paper because of the strategic placing of the board nodes which were challenging.The mockups were designed with [Wireframes Figma](static/docs/wireframe.pdf)
+- Paper wireframes and Mockup on figma was designed for the project. Most of the work was done on paper because of the strategic placing of the board nodes which were challenging.The mockups were designed with [Wireframes Figma](https://www.figma.com/file/lKQZBpKQDntcB0VcKEZgw2/Untitled?node-id=0%3A3)
 - Navigation bar - Menu with links pointing to each page
   - **Home** -  A picture carousel with images that let the user know the collaboration aims of the website and have a visual feel of what it is about.
   - **Sign Up / Sign In** - Which are visible to unregistered users to give them the option to register or for registered ones to sign in. Available on all pages and on the carousel as a button to keep consistency and user friendliness.
@@ -136,7 +136,7 @@ Some images were used in the website and resized using [tinypng site](https://ti
   and delete it.
  
 - Database Diagram to show the interaction of the pages.
-![Project Mock-up](static/images/figma.com)
+![Project Mock-up](https://www.figma.com/file/lKQZBpKQDntcB0VcKEZgw2/Untitled?node-id=0%3A3)
 
 
 ### 5. Surface
@@ -216,8 +216,7 @@ The aim was to achieve an overall clean UX and have it similar in all pages to k
 ## Code Validation
 
 - [W3C](https://validator.w3.org/) - HTML Markup Validation.
-- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing 
-correctly.
+- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates that all tags are opening and closing correctly.
 - [W3C](https://jigsaw.w3.org/css-validator/) - CSS Validation.
 - [JSHINT](https://jshint.com/) - JavaScript code warning & error check.
 - [PEP8 online](http://pep8online.com/) - PEP8 validator.
@@ -226,6 +225,22 @@ correctly.
 <span id="#5.0-testing"></span>
 
 ## Testing
+
+Most of the testing was done throughout the development and errors fixed as I coded. some of them included in the stackflow fields mentined below. the heroku URL was then tested on:
+ - [W3C](https://validator.w3.org/)  and the results were as follows:
+
+
+- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates that all tags are opening and closing correctly.
+- [W3C](https://jigsaw.w3.org/css-validator/) - CSS Validation.
+- [JSHINT](https://jshint.com/) - JavaScript code warning & error check.
+
+- [PEP8 online](http://pep8online.com/) - PEP8 validator. No errors were displayed during deployment and submission.
+
+[HERE](static/testing/TESTING.md)
+
+
+
+
 
 Testing documentation can be found [HERE](static/testing/TESTING.md)
 
@@ -292,6 +307,6 @@ be uploaded to your IDE
 
 ## Acknowledgments
 - Thanks for my mentor, Aaron Sinnott for guidence and excellent advices.
-- Thanks to all Code student support and tutor team.
+- Thanks to all Code student support and tutor team Tim for the tutorials and his github projects which were helpful for my project.
 - Thanks to CI Slack Community for all the assistance and support.
 - Thanks for all the web development community on Internet especially stackflow.

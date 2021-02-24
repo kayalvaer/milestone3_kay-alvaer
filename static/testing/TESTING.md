@@ -1,43 +1,61 @@
 ## USER STORIES
 
-1. As a user, I want to easily understand the main purpose of the site and learn more about the organisation.
+_**As an employee I want:**_
 
-- **TEST**: After the users load the page the first thing sees on the home page is a brief explanation of what they will 
-encounter on the website.
+1. - As a user, I want to virtually understand the main purpose of the site and understand the aim of the compant services.
 
-2. As a user, I want to easily to sign up to the website.
+- **TEST**: When site is opened the home page presents a carousel with images related to the services the site hopes to achieve.
 
-- **TEST**: Also in the home, there are two buttons redirecting to the Sign Up page and large screens and one button on small screens.
 
-3. As a user, I want to easily log in on my account.
+2.  - As a user, I want to easily sign up to the website.
 
-- **TEST**: With two clicks the users can easily login into their accounts.
+- **TEST**: There are two buttons in the home page carousel redirecting to the Register and Sign Up page and the navigation is clearly stated with the same functionality.
 
-4. As a user, I want to write personal summaries and main insights about the books I'm reading or already read
+3. - As a user, I want to easily Sign in on the site on all pages.
 
-- **TEST**: After the user creates an account or login into it, they will be redirected to the Profile page, where they 
-create personal book reviews, they write whatever they want in these reviews.
+- **TEST**: The two big bright buttons is easily visible for the users to easily login into their accounts.
 
-5. As a user, I want to create a list of books and share with other users.
+4. - As a user, I want to be able to and and write epics and user stories after a retrospective, so that if one team member is not available the work can be done.
 
-- **TEST**: On the Best Books page, the users can create any lists of books they want. When creating the list they have 
-the option to share it or not, if they decide to share, it will be seen by other users on the Discover page.
+- **TEST**: Having been registered and being able to login the user is permitted to add new epic list, edit all the added inputs and also delete such. This is open incase one of the members is not availble. 
 
-6. As a user, I want to find list of books from other people and get inspired to read other books.
 
-- **TEST**: As mention before, on the Discover page the users can see lists of books shared by other users. Clicking 
-on the lists the users will be redirected to a page where they can see the books. BY clicking on one of the books they will be 
-redirect to a page where they can see the books in more detail and also buttons that will redirect to a vendor.
+5. - As a user, I want to view a list of epics and be able to edit or mark them done as per our team´s agreement of finished projects.
 
-7. As a user, I want to easily find a way to buy the books in the lists.
+- **TEST**: Agile framework have processes that includes defining complete and considering a project done. This is supposed to be agreed upon by the team members and all must adhere to the promise of following it through. Once an epic is completed and after the final retrospective anyone in the team can tick click it as complete. The team share the process. 
 
-- **TEST**: When the user adds a new book to a list, there is an input field where they can add the URL to a vendor, the 
-users can add up to three vendors for future comparison.
+6. - As a user, I want to see a list of epics and relevant details for epics so that i know what projets are not completed yet.
 
-8. As a user, I want to easily update or delete old book summaries and lists of books.
+- **TEST**: As mention before, projects or epics in an agile team are put forward to the team to make decisions on deadlines and who will take what task.That means that all epics and stories must be transparent when released by the product manager and user stories will help to create the tasks and deadlines.
 
-- **TEST**: There are buttons where the user can update or delete any book summary or list of books they want. It's important to 
-say that if the user decides to share a list of books, only the creator of the list will be able to update or delete the list. 
+7. - As a user, I want to update or delete lists as per the team morals.
+
+- **TEST**: There are buttons where the user can update or delete details and it helps if a team members is sick, out of work or just not available 
+
+
+_**Developer**_
+
+8. - As a developer, I want to provide a platform where the user can add epics. 
+
+- **TEST**: The app provides an option for employees to add epics in the 
+
+8. - As a developer, I want to provide a platform where the CRUD functionality if fulfilled to meet employee expectations.
+
+- **TEST**: 
+
+8. - As a developer, I want to provide a platform where user can see and share new and existing epics.
+
+- **TEST**: 
+
+8. - As a developer, I want to provide a platform which interacts with the users and alerts them, so that their can be aware of their actions.
+
+- **TEST**: 
+
+8. - As a developer, I want to create an enjoyable, and easy to use platform that makes the user enjoy using it frequently.
+
+- **TEST**: 
+
+
 
 ## Navigation links redirect to the desired pages
 - Checked if all links in the navigation bar and check if they redirect to the desired pages.
@@ -67,47 +85,37 @@ say that if the user decides to share a list of books, only the creator of the l
     
 ## Pages contain all content and functionalities work as desired
 ### Home
-- Verified if the Sign-Up button only appears if the user is not already logged in.
+- Functionality verified if the Sign-Up button only appears if the user is not already logged in. only Sign up and sign in together with home page should be visible.
 ### Sign Up/Log In
-- Checked if a user attempt to sign up or log in with a special character and ensure an error message displays for each field 
-alerting the user of valid form input. 
-- Checked if a flash message displays if the user enters a user that already exists or the incorrect username and/or password.
-### Profile
-- Checked if a flash message encouraging the user to add the first book summary after sign up displays.
-![Message been displayed when a new user login into their account for the first time](../images/testing/new_user.png)
-- Checked if the Add Book modal works and add the book summary into the database.
-- Checked in the random quotes displays randomly on large screens.
-### View Book
-- Checked if the delete book functionality works.
-- Checked if the edit book functionality works.
-### Best Books
-- Checked if a message, encouraging the user to create their first list, displays when the user hasn't created the first list yet.
-![Message been displayed when user haven't created a list yet](../images/testing/new_user_list.png)
-- Checked if the "share" option is on the list will appear in the Discover Page.
-### View List
-- Checked if the modal add book into the list works.
-- Checked if the delete list functionality works.
-- Checked if the edit list functionality works.
-### Discover
+- Tested if when the user attempt to sign up or log in with a special character and ensure an error message displays for each input. 
+- Consistant alerting the user of valid form input. 
+- Tested if an invalid input flash message displays if the user enters a user that already exists or the incorrect username and/or password.
+
+### Employee Profile
+- Tested if a flash message welcoming the user when they sign in or register and redirecting them to welcoming employee page.
+- Tested if the Add employee redirect user to register form if the want to help register another person and also adds that to database upon registering a new employee.
+
+### View Epic list
+- Tested if the Delete Epic functionality works well.
+- Tested if the Edit Epic functionality is valid.
+- Tested if the Search Epic functionality works ok.
+- Tested if the Reset Epic list functionality works.
+- Tested if the Edit button on each individual list accordion redirect user to edit epic form.
+- Checked if entering a valid keyword the page returns the relevant content containing that keyword.
+
+### Search Epics functionality
 - Search functionality:
-    - Checked if when click to submit with no entries in the search field a message display to the user fill in the field.
-    - Checked if entering a valid keyword the page returns the relevant content containing that keyword.
-    - Checked if entering a non-valid the keyword the page returns "No results found".
-    - Checked if the Reset button resets the page when clicked as desired.
-- Check if "Unfortunately, username hasn't added any book to the list yet." message is been displayed when a list is been shared 
-but has no book in it yet.
-- Checked if when the user is redirected to the View List page the Add Book, Edit and Delete buttons are not been displayed as 
-only the creator of the list can use these buttons.
-- Made the same test as the above in the Book Info page.
+- Tested if when user click to submit with no entries in the search field a message display to the user fill in the field.
+- Checked if entering a valid keyword the page returns the relevant content containing that keyword.
+
 ### 404
-- Verified 404 page is displayed if navigate to an invalid link.
-- Check if the Bring Me Back button redirect to the home page.
+- Tested 404 page is displayed if navigate to an invalid link.
+- Check if the Back to Home page button redirect to the home page.
 ### 500
-- Verified if 500 page displays when an internal error happened.
+- Tested if 500 page displays when an internal error happened.
 
 ## Responsive Test
-- Test responsiveness of website on all screen sizes using different browsers(Google Chome, Opera, Firefox and Microsoft Edge)
-    - Using Devtools test if everything displays as it should from 300px width up to 1920px.
-- Viewed of different physical devices: Iphone 8(375px), Iphone 11(414px), Xiaomi Redmi 9(393px), medium laptop(1280px), 
-large desktop screen(1920px).
+- Checked the responsiveness of website on all screen sizes using different browsers(Google Chome, Opera, Firefox and Microsoft Edge)
+- Using Devtools test if everything displays as it should from 300px width up to 1920px.
+- Viewed of different physical devices: Iphone 8(375px), Iphone 11(414px), Iphone 5(320px), medium laptop(1280px) and large desktop screen(1920px).
 - Repeat test in all pages.
