@@ -30,6 +30,7 @@ def get_epics():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     find = request.form.get("find")
+    print(find)
     epics = list(mongo.db.epics.find({"$text": {"$search": find}}))
     return render_template("epics.html", epics=epics)
 
@@ -238,17 +239,27 @@ def delete_product(product_id):
     return redirect(url_for("get_products"))
 
 
+"""Error Handlers"""
+"""Page Not Found"""
 
-# 404 page not found error
+
 @app.errorhandler(404)
-def not_found_error(error):
-    return render_template('404.html', error=error), 404
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
-# 500 internal server error
+"""Server Error"""
+
+
 @app.errorhandler(500)
-def internal_error(error):
-    return render_template('500.html', error=error), 500
+def server_error(e):
+    return render_template('500.html'), 500
+
+
+"""
+User authentication with thanks to Miroslav Svec, DCD Channel lead.
+Adapted from https://github.com/MiroslavSvec/DCD_lead and https://github.com/Wings30306/the-writers-club/blob/master/app.py
+"""
 
 
 if __name__ == "__main__":

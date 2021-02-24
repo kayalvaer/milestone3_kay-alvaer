@@ -1,4 +1,4 @@
-<h1 class="align-center">userStory Master workspace site</h1>
+<h1 class="align-center">userStory master epicboard site</h1>
 
 ## Code Institute: Milestone Project 3
 
@@ -105,7 +105,7 @@ Simplicity was the aim here, due to timeline. Four navigation list items were ad
 ### Colors:
 - #### Colour scheme
   The colours that are used for the start and game over screen are:
-- ![#fffff](https://via.placeholder.com/15/fffff/000000?text=+) #fffff (white)
+- ![#ffffff](https://via.placeholder.com/15/fffff/000000?text=+) #fffff (white)
 - ![#fafafa](https://via.placeholder.com/15/fafafa/000000?text=+) #ffffff (White)
 - ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 (teal)
 - ![#ff5722](https://via.placeholder.com/15/ff5722/000000?text=+) #ff5722 (orange)
@@ -171,14 +171,14 @@ The aim was to achieve an overall clean UX and have it similar in all pages to k
 
 ## Technologies Used
 
-- #### 1. Languages
+#### 1. Languages
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
 
-- #### 2. Integrations
+#### 2. Integrations
 
 - [Google Fonts](https://fonts.google.com/) - Typography.
 - [FontAwesome](https://fontawesome.com/) - Used for icons.
@@ -187,7 +187,7 @@ The aim was to achieve an overall clean UX and have it similar in all pages to k
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Micro web framework written in Python.
 - [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
 
-- #### 3. Workspace, version control, and repository storage
+#### 3. Workspace, version control, and repository storage
 
 - [vscode](https://code.visualstudio.com/) - IDE (Integrated Development Environment) used to write the code.
 - [GitHub](https://github.com/) - Repository hosting service to host the deployed website and track previous versions of code.
@@ -302,6 +302,7 @@ be uploaded to your IDE
 - Error in connection mongodb atlas to shell sorted with input from [here](https://stackoverflow.com/questions/62466849/error-in-connection-mongodb-atlas-to-shell).
 - To overcome the understanding of the crud functionality i found this article helpful in addition to code institute tutorials [here](https://medium.com/@gokulprakash22/getting-started-with-flask-pymongo-d6326db2a9a7).
 - I did not use Materialize but bootrap materialize and this helped me to adjust my button layout and make them responsive together with my bootstrap knowledge [here](https://stackoverflow.com/questions/45822665/how-to-make-materializecss-buttons-stack-nicely-on-small-screens).
+- Error handling code I refered to the net link [here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/).
 
 <span id="#8.0-acknowledgments"></span>
 

@@ -1,0 +1,11 @@
+{% extends "layout.html" %} {% block title %} Page Not Found!
+{% endblock %} {% block header %} Page Not Found! {% endblock %} {% block
+content %}
+    <h2>Oops! Something went wrong there!</h2>
+    <p>You seem to have gone the wrong path, try spmething else.</p>
+<div class="container-error">
+    <img src="{{ url_for('static', filename='images/404img.png')}}" alt="404 error" />
+</div>
+    <p>Try to go back to the home page <a href="{{ url_for('index') }}">Home</a>!</p>
+
+{% endblock %}
