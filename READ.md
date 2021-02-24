@@ -44,7 +44,7 @@ This project is the third one, out of four Milestone Projects in the Full Stack 
 
 <span id="1.1-userstories"></span>
 
-- #### 1.1 User stories
+## 1.1 User stories
 
 _**Site users**_
 
@@ -62,7 +62,7 @@ _**Developer**_
 
 <span id="1.2-strategy"></span>
 
-- #### 1. Strategy
+## 1. Strategy
 
 - Provide a platform where the user can add epics.
 - Provide a platform where the CRUD functionality if fulfilled to meet employee expectations.
@@ -74,11 +74,11 @@ _**Developer**_
 <span id="1.2-scope"></span>
 
 
-- #### Project scope
+## 2. Project scope
 
 The idea of this project was inspired of my experience of being an intern in Technical team of an organisation and it was frunstrating, at that time that some of the solutions i knew can easily be solved by technology and my IT skills as a student at that time were limited. I enjoyed it would like to explore other functionalities for expansion. Am thankful to the team and the product manager of the organisation for the inspiration and skills acquired.
 
-### 2. Take home points
+
 
 - Fits in with my current skill-set of HTML, CSS, JavaScript, Python, Flask and MongoDB and will use my Sass skills for the styling to develop it further.
 - Allow the user to sign up into the website with "Register" Button for new users.
@@ -89,7 +89,7 @@ The idea of this project was inspired of my experience of being an intern in Tec
 
 <span id="#1.4-structure"></span>
 
-- #### Structure Plan
+## Structure Plan
 
 Simplicity was the aim here, due to timeline. Four navigation list items were added, which were: "Logo Name" and buttons to redirect the user to othe pages on the site.
 
@@ -100,7 +100,7 @@ Simplicity was the aim here, due to timeline. Four navigation list items were ad
 
 <span id="#1.5-skeleton"></span>
 
-#### 4. UX/UI Choices
+## 4. UX/UI Choices
 
 ### Colors:
 - #### Colour scheme
