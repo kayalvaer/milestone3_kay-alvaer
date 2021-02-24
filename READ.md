@@ -105,12 +105,11 @@ Simplicity was the aim here, due to timeline. Four navigation list items were ad
 ### Colors:
 - #### Colour scheme
   The colours that are used for the start and game over screen are:
-- ![#adff2f](https://via.placeholder.com/15/adff2f/000000?text=+) #ffab0d (Orange)
-- ![#5d5ddb](https://via.placeholder.com/15/5d5ddb/000000?text=+) #ffffff (White)
-- ![#06d6f8](https://via.placeholder.com/15/06d6f8/000000?text=+) #383737 (Dark grey)
-- ![#e45015](https://via.placeholder.com/15/e45015/000000?text=+) #ffffff (White)
-- ![#cac7c7](https://via.placeholder.com/15/cac7c7/000000?text=+) #ffffff (White)
-- ![#d47b06](https://via.placeholder.com/15/ffffff/000000?text=+) #ffffff (White)
+- ![#fffff](https://via.placeholder.com/15/fffff/000000?text=+) #fffff (white)
+- ![#fafafa](https://via.placeholder.com/15/fafafa/000000?text=+) #ffffff (White)
+- ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 (teal)
+- ![#ff5722](https://via.placeholder.com/15/ff5722/000000?text=+) #ff5722 (orange)
+- ![#e29584](https://via.placeholder.com/15/e29584/000000?text=+) #e29584 (light orange)
 
 #Color palette designed on [Xd color palette](https://xd.adobe.com/view/2f4f2ab7-d326-408a-a4e4-15ff93b99f26-7a1c/)
 [Portfolio website](assets/imgs/figma-color palette.png)
