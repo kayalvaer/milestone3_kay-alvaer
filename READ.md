@@ -127,9 +127,18 @@ The color choice of this project was putting into consideration the professional
 Some images were used in the website and resized using [tinypng site](https://tinypng.com/) and all of them have a common background gradient of #ffffff and #e29584 colours, as a base colour and gives a different tone to the body.
 
 
-- #### Wireframes:
+#### Wireframes:
 
-- Paper wireframes and Mockup on figma was designed for the project. Most of the work was done on paper because of the strategic placing of the board nodes which were challenging.The mockups were designed with [Wireframes Figma](https://www.figma.com/file/lKQZBpKQDntcB0VcKEZgw2/Untitled?node-id=0%3A3)
+- Database Diagram to show the interaction anf functionality view of the pages.
+![Mindmap Diagram](static/css/images/mindmap.png)
+
+- Paper wireframes and Mockup on figma was designed for the project. Most of the work was done on paper because of the strategic placing of the board nodes which were challenging.The mockups were designed with
+1. Initial design 
+[Wireframes Figma](https://www.figma.com/file/2SsTNHq5U1y25Qgbd8aAnR/The-Systems-Space?node-id=0%3A1) 
+2. Changed most of the layout to a new design 
+[Wireframes Figma](https://www.figma.com/file/lKQZBpKQDntcB0VcKEZgw2/Untitled?node-id=0%3A3)
+
+
 - Navigation bar - Menu with links pointing to each page
   - **Home** -  A picture carousel with images that let the user know the collaboration aims of the website and have a visual feel of what it is about.
   - **Sign Up / Sign In** - Which are visible to unregistered users to give them the option to register or for registered ones to sign in. Available on all pages and on the carousel as a button to keep consistency and user friendliness.
@@ -138,9 +147,6 @@ Some images were used in the website and resized using [tinypng site](https://ti
   - **Manage Epics** - Only visible to Product owner and Scrum master. This page gives the product owner and scrum master the posibility to see the epics all in a different format for easy transfer into delivery charts and other processes. They can edit and delete the epics as well. 
   and delete it.
  
-- Database Diagram to show the interaction of the pages.
-![Project Mock-up](https://www.figma.com/file/lKQZBpKQDntcB0VcKEZgw2/Untitled?node-id=0%3A3)
-
 
 ### 5. Surface
 The aim was to achieve an overall clean UX and have it similar in all pages to keep consistency.
@@ -308,7 +314,7 @@ be uploaded to your IDE
 - Error handling code I refered to the net link [here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/).
 
 - A bmd error which I have no control over have created two errors on the console. this is comming from bootstrap material design css framework. 
-![Project Mock-up](static/css/images/bmd.png)
+![Bootstrap amterial design error](static/css/images/bmd.png)
 
 <span id="#8.0-acknowledgments"></span>
 
