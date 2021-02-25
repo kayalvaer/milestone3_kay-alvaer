@@ -235,7 +235,7 @@ The aim was to achieve an overall clean UX and have it similar in all pages to k
 
 ## Testing
 
-Most of the testing was done throughout the development and errors fixed as I coded. some of them included in the stackflow fields mentined below. the heroku URL was then tested on:
+Most of the testing was done throughout the development and errors fixed as I coded normal errors that cannot be resolved because of jinja were there but my mentor said it is normal. some of them included in the stackflow fields mentined below. the heroku URL was then tested on:
  - [W3C](https://validator.w3.org/)  and the results were as follows:
 
 
