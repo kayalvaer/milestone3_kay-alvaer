@@ -2,9 +2,9 @@
 
 _**As an employee I want:**_
 
-1. - As a user, I want to virtually understand the main purpose of the site and understand the aim of the compant services.
+1. - As a user, I want to virtually understand the main purpose of the site and understand the aim of the company services.
 
-- **TEST**: When site is opened the home page presents a carousel with images related to the services the site hopes to achieve.
+- **TEST**: When the site is opened, the home page presents a carousel slide with images related to the services the site hopes to achieve. The search part in the home page also gives the user an idea of the kind of projects we work with. For future development i will restrict the kind of information that can be displayed to a non-user. The current information is safe for an inhouse platform.
 
 
 2.  - As a user, I want to easily sign up to the website.
@@ -47,41 +47,35 @@ _**Developer**_
 
 - **TEST**: 
 
-8. - As a developer, I want to provide a platform which interacts with the users and alerts them, so that their can be aware of their actions.
+8. - As a developer, I want to provide a platform which interacts with the users and alerts them, so that they can be aware of their actions.
 
 - **TEST**: 
 
-8. - As a developer, I want to create an enjoyable, and easy to use platform that makes the user enjoy using it frequently.
+8. - As a developer, I want to create an enjoyable, and easy to use platform that makes the user enjoy using the site frequently.
 
 - **TEST**: 
 
 
 
 ## Navigation links redirect to the desired pages
-- Checked if all links in the navigation bar and check if they redirect to the desired pages.
-- Checked if the social links on the footer redirect to the desired page.
+- Confirmed if all links in the navigation bar redirect to the desired pages.
+- Tested if the social links on the footer redirect to the desired page.
 - **Home Page**:
-    - Checked if the Sign-Up button redirects to the Sign Up page.
+    - Tested if the Register button redirects to the Sign Up page.
+    - Tested if the search button redirects to the seached epics. I have Tv advert as my epic name and it gave me the list.
 - **Sign Up/Login Pages**:
-    - Checked if the Sign-Up and Log in anchor redirect to the desired pages.
-- **Profile Page**:
-    - Checked if Add Book Button display the Add Book modal when clicked.
-    - Checked if by clicking and cover of the book reviews redirect to the desired page.
-- **View Book Page**:
-    - Checked if the Done, Edit and Delete button work properly.
-- **Best Books Page**:
-    - Checked if the Add List Button displays the Add List modal when clicked.
-    - Checked if the See Books button redirects to the desired page:
-    - Checked if by clicking in the list name the user is redirected to the same page if the user clicked in the See Books button.
-- **View List Page**:
-    - Checked if the Done, Edit and Delete button work properly.
-    - Checked if the user is redirected to the correct page when clicking and a book cover.
-- **Book Info Page**:
-    - Checked if the Done, Edit and Delete button work properly.
-    - Checked if the buy buttons redirect to the desired pages.
-- **Discover Page**:
-    - Checked if the See Books button redirects to the desired page:
-    - Checked if by clicking in the list name the user is redirected to the same page if the user clicked in the See Books button.
+    - Tested if the Sign-Up and Log in home page buttons redirect to the desired pages.
+- **Employee Profile Page**:
+    - Tested if Add Epic Button add data to mongoDB.
+    - Tested if by clicking logo and image in employee welcome page redirects me back to home page.
+- **View Epics page and Epics manager page**:
+    - Confirmed if the Done, Edit and Delete button work properly.
+- **Epic Category/products Page**:
+    - Tested if the Add List Button add the epics to mongoDB when clicked.
+    - Tested if by clicking the cancel page i get redirected to the same page.
+- **search function**:
+    - Tested if the search section on top of the epic list displays entered request and when reseted it functions well as desired:
+    
     
 ## Pages contain all content and functionalities work as desired
 ### Home

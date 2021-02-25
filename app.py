@@ -29,7 +29,7 @@ def get_epics():
 #search epics function
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    find = request.form.get("find")
+    find = request.args.get("find")
     print(find)
     epics = list(mongo.db.epics.find({"$text": {"$search": find}}))
     return render_template("epics.html", epics=epics)
@@ -243,16 +243,18 @@ def delete_product(product_id):
 """Page Not Found"""
 
 
+# 404 page not found error
 @app.errorhandler(404)
-def page_not_found(e):
+def error_page(e):
     return render_template('404.html'), 404
 
 
-"""Server Error"""
+"""Net Error"""
 
 
+# 500 internal server error
 @app.errorhandler(500)
-def server_error(e):
+def net_error(e):
     return render_template('500.html'), 500
 
 

@@ -18,7 +18,7 @@
     <link
     rel="shortcut icon"
     type="image/png"
-    href="{{ url_for('static', filename='images/favicon.png')}}"
+    href="{{ url_for('static', filename='icons/favicon.jpg')}}"
     />
 </head>
 <body>
@@ -65,6 +65,7 @@
                 {% endif %}
               </ul>
               <!---search icon-->
+            <form action="{{ url_for('search') }}">
                 <div class="bmd-form-group bmd-collapse-inline pull-xs-left pr-5">
                     <button class="btn bmd-btn-icon"  
                         data-toggle="collapse"
@@ -80,6 +81,7 @@
                         placeholder="Enter query...">
                     </span>
                 </div>
+            </form>
 
             </div>
           </nav>

@@ -4,7 +4,9 @@
 
 ![Project Mock-up](static/css/images/usermanager.png)
 
-This project goal is to give employees of any organisation or a department in a company a core working space where they can share write and display their Epics or projects. This aims to allow employees to register themselves and create the project details , following the agile process of creating stories and epics and having a Scrum master and Project owner to manage the overall inputs. The system satisfies the CRUD functionality process.
+This project goal is to give employees of any organisation or a department in a company a core working space where they can share write and display their Epics or projects. This aims to allow employees to register themselves and create the project details , following the agile process of creating stories and epics and having a Scrum master and Project owner to manage the overall inputs. The system satisfies the CRUD functionality process. 
+
+For future development i will restrict the kind of information that can be displayed to a non-user. The current information is safe for an inhouse platform, the system makes the other collaborating teams in a common organisation to be aware of the projects a certain department is working on.These helps also for better collaboration and they will know who to contact incase of related queries.
 
 This project is the third one, out of four Milestone Projects in the Full Stack Web Development Program I am attending at The Code Institute. 
 
@@ -110,6 +112,7 @@ Simplicity was the aim here, due to timeline. Four navigation list items were ad
 - ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 (teal)
 - ![#ff5722](https://via.placeholder.com/15/ff5722/000000?text=+) #ff5722 (orange)
 - ![#e29584](https://via.placeholder.com/15/e29584/000000?text=+) #e29584 (light orange)
+- ![#bf360c](https://via.placeholder.com/15/bf360c/000000?text=+) #e29584 (dark orange)
 
 #Color palette designed on [Xd color palette](https://xd.adobe.com/view/2f4f2ab7-d326-408a-a4e4-15ff93b99f26-7a1c/)
 [Portfolio website](assets/imgs/figma-color palette.png)
@@ -153,7 +156,7 @@ The aim was to achieve an overall clean UX and have it similar in all pages to k
 - Button to add new epic.
 - Button to edit epics.
 - Button to delete epics.
-- Button to search epics however the home search part could not search the epic lists and needs more investigation.
+- Button to search epics in the home page however does not allow an unregistered user to edit or do anything to the epic list. But can see what is going on.
 - Conditional alerts done by Snackbar popups to alert the user what they did and for the system to be more interactive.
 - Footer with social media links.
 
@@ -303,6 +306,9 @@ be uploaded to your IDE
 - To overcome the understanding of the crud functionality i found this article helpful in addition to code institute tutorials [here](https://medium.com/@gokulprakash22/getting-started-with-flask-pymongo-d6326db2a9a7).
 - I did not use Materialize but bootrap materialize and this helped me to adjust my button layout and make them responsive together with my bootstrap knowledge [here](https://stackoverflow.com/questions/45822665/how-to-make-materializecss-buttons-stack-nicely-on-small-screens).
 - Error handling code I refered to the net link [here](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/).
+
+- A bmd error which I have no control over have created two errors on the console. this is comming from bootstrap material design css framework. 
+![Project Mock-up](static/css/images/bmd.png)
 
 <span id="#8.0-acknowledgments"></span>
 
